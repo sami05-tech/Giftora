@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Giftora</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #2b2024;
+            background: #fffaf8;
+        }
+
+        .navbar {
+            background: rgba(255, 250, 248, .96);
+            box-shadow: 0 2px 18px rgba(0, 0, 0, .06);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #8e3f5b !important;
+        }
+
+        .nav-link {
+            color: #35262b !important;
+            font-weight: 500;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: #b75d78 !important;
+        }
+
+        .quote-btn {
+            background: #a64f6c;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .quote-btn:hover {
+            background: #843c55;
+            color: white;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #2b2024;
+        }
+
+        .product-card {
+            border: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 30px rgba(73, 39, 50, .08);
+            height: 100%;
+            transition: .3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(73, 39, 50, .14);
+        }
+
+        .product-card {
+            border: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 30px rgba(73, 39, 50, 0.08);
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .product-card img {
+            display: block;
+            width: 100% !important;
+            height: 270px !important;
+            object-fit: cover !important;
+            object-position: center;
+            padding: 0 !important;
+            margin: 0;
+            background: transparent;
+        }
+
+        .product-card .card-body {
+            padding: 20px;
+        }
+
+        .product-card .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .product-btn {
+            border: 1px solid #a64f6c;
+            color: #a64f6c;
+            border-radius: 25px;
+            padding: 8px 18px;
+            text-decoration: none;
+            display: inline-block;
+            transition: .3s;
+        }
+
+        .product-btn:hover {
+            background: #a64f6c;
+            color: white;
+        }
+
+        .search-box {
+            max-width: 450px;
+            margin: 0 auto 35px;
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 34px;
+            }
+
+            .product-card img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container py-2">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="../Image/GiftoraLogo.png" alt="Giftora Corporate Gifting" style="width:220px; height:auto;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bulk-gifting.html">Bulk Gifting</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <li class="nav-item mx-lg-2 my-2 my-lg-0">
+                        <form class="giftora-search" action="products.html" method="get">
+                            <input type="search" name="search" placeholder="Search gifts..." aria-label="Search gifts">
+
+                            <button type="submit" aria-label="Search">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                    </li>
+
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="quote-btn" href="contact.html">Get a Quote</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- PRODUCTS SECTION -->
+    <div class="container py-5">
+
+        <h1 class="section-title text-center mb-3">Our Products</h1>
+
+        <p class="text-center mb-4">
+            Explore our premium corporate gifting collection.
+        </p>
+
+        <!-- PRODUCT SEARCH -->
+        <div class="search-box">
+            <input type="search" id="productSearch" class="form-control form-control-lg"
+                placeholder="Search products...">
+        </div>
+
+        <!-- PRODUCT CARDS -->
+        <div class="row g-4" id="productContainer"></div>
+
+        <p id="noProducts" class="text-center mt-4" hidden>
+            No products found. Try another search.
+        </p>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4">
+        <p class="mb-0">© 2026 Giftora - Corporate Gifting. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+        const products = [
+            {
+                name: "Premium Gift Hamper",
+                image: "01-corporate-gift-hamper.jpg",
+                description: "A perfect blend of utility and style."
+            },
+            {
+                name: "Insulated Water Bottle",
+                image: "02-insulated-bottle.jpg",
+                description: "Stay refreshed throughout the day."
+            },
+            {
+                name: "Executive Diary",
+                image: "03-leather-notebook.jpg",
+                description: "Plan better and stay organized."
+            },
+            {
+                name: "Premium Pen Set",
+                image: "04-premium-pen-set.jpg",
+                description: "Write with elegance and style."
+            },
+            {
+                name: "Designer Coffee Mug",
+                image: "05-marble-coffee-mug.jpg",
+                description: "A stylish gift for everyday use."
+            },
+            {
+                name: "Desk Organizer",
+                image: "06-desk-organizer.jpg",
+                description: "Keep your workspace neat."
+            },
+            {
+                name: "Festive Gift Basket",
+                image: "07-festive-sweets-basket.jpg",
+                description: "Make every celebration special."
+            },
+            {
+                name: "Teddy Bear",
+                image: "08-plush-teddy-bear.jpg",
+                description: "A thoughtful and cheerful gift."
+            },
+            {
+                name: "Scented Candle",
+                image: "09-scented-candle.jpg",
+                description: "Add warmth to every space."
+            },
+            {
+                name: "Desk Clock",
+                image: "10-desk-clock.jpg",
+                description: "A timeless addition to any desk."
+            },
+            {
+                name: "Indoor Plant",
+                image: "11-indoor-plant.jpg",
+                description: "Bring a little greenery to work."
+            },
+            {
+                name: "Wireless Earbuds",
+                image: "12-wireless-earbuds.jpg",
+                description: "Enjoy convenient wireless listening."
+            },
+            {
+                name: "Power Bank",
+                image: "13-power-bank.jpg",
+                description: "Stay connected while on the move."
+            },
+            {
+                name: "Premium Pendrive",
+                image: "14-pendrive.jpg",
+                description: "A compact and useful corporate gift."
+            },
+            {
+                name: "Corporate Backpack",
+                image: "15-corporate-backpack.jpg",
+                description: "A practical companion for daily travel."
+            },
+            {
+                name: "Cookie Gift Box",
+                image: "16-cookie-gift-box.jpg",
+                description: "Share a sweet moment with your team."
+            },
+            {
+                name: "Premium Blanket",
+                image: "17-premium-throw-blanket.jpg",
+                description: "A cozy and thoughtful gift."
+            },
+            {
+                name: "Decorative Snow Globe",
+                image: "18-decorative-snow-globe.jpg",
+                description: "A memorable desk decoration."
+            },
+            {
+                name: "Motivational Desk Frame",
+                image: "19-motivational-desk-frame.jpg",
+                description: "Inspiration for every workspace."
+            },
+            {
+                name: "Crystal Glass Set",
+                image: "20-crystal-glass-set.jpg",
+                description: "An elegant premium gifting choice."
+            },
+            {
+                name: "Travel Tumbler",
+                image: "21-travel-tumbler.jpg",
+                description: "Enjoy your favourite drinks anywhere."
+            },
+            {
+                name: "Premium Perfume",
+                image: "22-premium-perfume.jpg",
+                description: "A sophisticated fragrance gift."
+            },
+            {
+                name: "Mobile Stand",
+                image: "23-mobile-stand.jpg",
+                description: "A handy accessory for every desk."
+            },
+            {
+                name: "Eco-Friendly Gift Bag",
+                image: "24-eco-friendly-gift-bag.jpg",
+                description: "A thoughtful and sustainable choice."
+            }
+        ];
+
+        const productContainer = document.getElementById("productContainer");
+        const productSearch = document.getElementById("productSearch");
+        const noProducts = document.getElementById("noProducts");
+
+        function displayProducts(searchText = "") {
+            productContainer.innerHTML = "";
+
+            const searchValue = searchText.trim().toLowerCase();
+
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(searchValue)
+            );
+
+            filteredProducts.forEach(product => {
+                productContainer.innerHTML += `
+            <div class="col-sm-6 col-lg-4 col-xl-3">
+                <div class="card product-card">
+                    <img src="../Image/Product/${product.image}"
+                         class="card-img-top"
+                         alt="${product.name}"
+                         loading="lazy"
+                         onerror="this.src='https://placehold.co/600x450/f8eeee/8e3f5b?text=Product+Image'">
+
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text">${product.description}</p>
+                        <a href="contact.html" class="product-btn">
+                            Enquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+            });
+
+            noProducts.hidden = filteredProducts.length !== 0;
+        }
+        productSearch.addEventListener("input", function () {
+            displayProducts(this.value);
+        });
+
+
+        // Support search from URL, e.g. products.html?search=bottle
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialSearch = urlParams.get("search") || "";
+
+        productSearch.value = initialSearch;
+        displayProducts(initialSearch);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Javascript/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craftora Gifts | Crafted With Love</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #2b2024;
+            background: #fffaf8;
+        }
+
+        .navbar {
+            background: rgba(255, 250, 248, 0.96);
+            box-shadow: 0 2px 18px rgba(0,0,0,0.06);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #8e3f5b !important;
+        }
+
+        .nav-link {
+            color: #35262b !important;
+            font-weight: 500;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: #b75d78 !important;
+        }
+
+        .quote-btn {
+            background: #a64f6c;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .quote-btn:hover {
+            background: #843c55;
+            color: white;
+        }
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(40,20,28,.78), rgba(40,20,28,.18)),
+                url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1800&q=85')
+                center/cover;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 650px;
+        }
+
+        .hero-content .small-title {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 14px;
+            color: #ffd9e4;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 6vw, 78px);
+            line-height: 1.05;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #f8e9ed;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            margin-right: 12px;
+            margin-top: 15px;
+            padding: 13px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn-main {
+            background: #d47a98;
+            color: white;
+        }
+
+        .btn-main:hover {
+            background: #b75d78;
+            color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #5b3441;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #77686d;
+        }
+
+        .category-card {
+            border: 0;
+            overflow: hidden;
+            border-radius: 18px;
+            background: white;
+            box-shadow: 0 8px 30px rgba(73,39,50,.08);
+            transition: .3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .category-card img {
+            height: 230px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .category-card h5 {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            margin: 0;
+        }
+
+        .product-card {
+            border: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 30px rgba(73,39,50,.08);
+            height: 100%;
+        }
+
+        .product-card img {
+            height: 270px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-card .price {
+            color: #a64f6c;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .product-btn {
+            border: 1px solid #a64f6c;
+            color: #a64f6c;
+            border-radius: 25px;
+            padding: 8px 18px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .product-btn:hover {
+            background: #a64f6c;
+            color: white;
+        }
+
+        .about-box {
+            background: #f5e7ea;
+            border-radius: 25px;
+            padding: 55px;
+        }
+
+        .why-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px 22px;
+            height: 100%;
+            box-shadow: 0 8px 25px rgba(73,39,50,.06);
+        }
+
+        .why-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f3dce3;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .cta {
+            background:
+                linear-gradient(rgba(91,43,57,.82), rgba(91,43,57,.82)),
+                url('https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1800&q=85')
+                center/cover;
+            color: white;
+            padding: 90px 20px;
+        }
+
+        footer {
+            background: #291d21;
+            color: #cfc0c4;
+        }
+
+        footer h4 {
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        footer a {
+            color: #cfc0c4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 580px;
+            }
+
+            .about-box {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container py-2">
+
+        <a class="navbar-brand" href="index.html">
+            <img src="../Image/GiftoraLogo.jpeg"
+                 alt="Giftora Logo"
+                 height="55"
+                 width="200">
+            <h5>- Corporate Gifting -</h5>
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                
+<!-- SEARCH BAR -->
+<li class="nav-item mx-lg-2 my-2 my-lg-0">
+    <form class="d-flex" action="products.html" method="get" role="search">
+        <input
+            class="form-control"
+            type="search"
+            name="search"
+            placeholder="Search gifts..."
+            aria-label="Search products">
+
+        <button class="btn btn-outline-dark ms-2" type="submit">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+</li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.html">Categories</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                    <a class="quote-btn" href="contact.html">Get a Quote</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="small-title">Thoughtfully crafted • Beautifully gifted</div>
+            <h1>Make Every Gift Feel Extraordinary.</h1>
+            <p>
+                Premium gift boxes, hampers and customized packaging
+                crafted to make birthdays, weddings, festivals and
+                corporate moments truly memorable.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn-main">Explore Collection</a>
+                <a href="#contact" class="btn-outline">Customize Your Gift</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories" class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <div class="text-uppercase small fw-semibold" style="letter-spacing:2px;color:#a64f6c;">
+                Explore
+            </div>
+            <h2 class="section-title mt-2">Shop By Category</h2>
+            <p class="section-subtitle">
+                Discover beautifully crafted gifting solutions for every occasion.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card ">
+                    <img src="../Image/product1.png">
+                    <div class="p-4"><h5>Gift Boxes</h5><p class="text-muted mb-0">Elegant boxes for special moments.</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <img src="../Image/product10.png">
+                    <div class="p-4"><h5>Gift Hampers</h5><p class="text-muted mb-0">Curated gifts made memorable.</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <img src="../Image/product4.png">
+                    <div class="p-4"><h5>Corporate Gifts</h5><p class="text-muted mb-0">Premium gifting for your brand.</p></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <img src="../Image/product5.png">
+                    <div class="p-4"><h5>Wedding Gifts</h5><p class="text-muted mb-0">Beautiful gifts for beautiful beginnings.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="py-5" style="background:#f8eeee;">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <div class="text-uppercase small fw-semibold" style="letter-spacing:2px;color:#a64f6c;">Our collection</div>
+            <h2 class="section-title mt-2">Featured Gifts</h2>
+            <p class="section-subtitle">A demo product collection — replace these with the client's real products later.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <img src="../Image/product6.png">
+                    <div class="p-4">
+                        <h5>Signature Gift Box</h5>
+                        <p class="text-muted">Premium handcrafted box.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">₹899</span>
+                            <a class="product-btn" href="#contact">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <img src="../Image/product7.png">
+                    <div class="p-4">
+                        <h5>Luxury Hamper</h5>
+                        <p class="text-muted">A curated premium collection.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">₹1,499</span>
+                            <a class="product-btn" href="#contact">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <img src="../Image/product8.png">
+                    <div class="p-4">
+                        <h5>Corporate Gift Set</h5>
+                        <p class="text-muted">Professional branded gifting.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">₹1,999</span>
+                            <a class="product-btn" href="#contact">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <img src="../Image/product9.png">
+                    <div class="p-4">
+                        <h5>Wedding Hamper</h5>
+                        <p class="text-muted">Elegant gifting for celebrations.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">₹1,299</span>
+                            <a class="product-btn" href="#contact">Enquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5">
+    <div class="container py-5">
+        <div class="about-box">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="text-uppercase small fw-semibold" style="letter-spacing:2px;color:#a64f6c;">About Craftora</div>
+                    <h2 class="section-title mt-2">Crafting moments, one beautiful box at a time.</h2>
+                    <p class="text-muted mt-3">
+                        We create thoughtfully designed gift boxes, hampers and
+                        customized packaging for people and brands who want to
+                        make their gifting experience unforgettable.
+                    </p>
+                    <a href="#contact" class="quote-btn d-inline-block mt-2">Work With Us</a>
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded-4"
+                         src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=85">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="py-5" style="background:#fff;">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <div class="text-uppercase small fw-semibold" style="letter-spacing:2px;color:#a64f6c;">Why choose us</div>
+            <h2 class="section-title mt-2">Made With Attention To Detail</h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="why-icon">✦</div>
+                    <h5>Premium Quality</h5>
+                    <p class="text-muted mb-0">Quality materials and careful finishing in every creation.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="why-icon">♡</div>
+                    <h5>Custom Designs</h5>
+                    <p class="text-muted mb-0">Create a gift around your occasion, theme and brand.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="why-icon">◇</div>
+                    <h5>Bulk Orders</h5>
+                    <p class="text-muted mb-0">Flexible gifting solutions for events and businesses.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="why-icon">✓</div>
+                    <h5>Reliable Service</h5>
+                    <p class="text-muted mb-0">From concept to final packaging, we keep it simple.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-5" style="background:#f8eeee;">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <div class="text-uppercase small fw-semibold" style="letter-spacing:2px;color:#a64f6c;">Our work</div>
+            <h2 class="section-title mt-2">A Glimpse Of Our Craft</h2>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-4"><img class="img-fluid rounded-4" src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=900&q=80"></div>
+            <div class="col-md-4"><img class="img-fluid rounded-4" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=80"></div>
+            <div class="col-md-4"><img class="img-fluid rounded-4" src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=900&q=80"></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta text-center">
+    <div class="container">
+        <h2 class="section-title text-white">Have A Gift Idea In Mind?</h2>
+        <p class="lead mt-3">Let's turn your idea into a beautifully crafted gift.</p>
+        <a href="#contact" class="btn-main d-inline-block mt-3 px-4 py-3 rounded-pill text-decoration-none">Start A Conversation</a>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <div class="text-uppercase small fw-semibold" style="letter-spacing:2px;color:#a64f6c;">Get in touch</div>
+            <h2 class="section-title mt-2">Let's Create Something Special</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="Enter phone number">
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter email">
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">Tell us about your requirement</label>
+                            <textarea class="form-control" rows="5" placeholder="Gift type, quantity, occasion, customization..."></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="button" class="quote-btn border-0 px-4">Send Enquiry</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pt-5 pb-3">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <h4>Giftora - Corporate Gifting</h4>
+                <p class="mt-3">
+                    Premium gift boxes, hampers and customized gifting
+                    solutions crafted with care.
+                </p>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h5 class="text-white">Explore</h5>
+                <p><a href="#">Home</a></p>
+                <p><a href="#products">Products</a></p>
+                <p><a href="#about">About Us</a></p>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h5 class="text-white">Help</h5>
+                <p><a href="#contact">Contact</a></p>
+                <p><a href="#contact">Get a Quote</a></p>
+                <p><a href="#">FAQ</a></p>
+            </div>
+
+            <div class="col-lg-3">
+                <h5 class="text-white">Contact</h5>
+                <p>+91 98765 43210</p>
+                <p>hello@giftora.in</p>
+                <p>India</p>
+            </div>
+        </div>
+
+        <hr class="mt-4">
+        <p class="text-center mb-0">© 2026 Giftora. Demo website for client presentation.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</footer>
+
+</body>
+</html>

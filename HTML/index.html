@@ -69,17 +69,51 @@
         }
 
         .hero {
-            min-height: 650px;
+            display: block;
+            width: 100%;
+            height: 650px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #giftoraHero {
+            width: 100%;
+            height: 100%;
+        }
+
+        #giftoraHero .carousel-inner,
+        #giftoraHero .carousel-item {
+            width: 100%;
+            height: 650px;
+        }
+
+        #giftoraHero .carousel-item {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #giftoraHero .carousel-item::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    rgba(40, 20, 28, .78),
+                    rgba(40, 20, 28, .18));
+        }
+
+        #giftoraHero .container {
+            position: relative;
+            z-index: 2;
+            height: 100%;
             display: flex;
             align-items: center;
-            background:
-                linear-gradient(90deg, rgba(40, 20, 28, .78), rgba(40, 20, 28, .18)),
-                url('../Image/Home/01-corporate-gift-hamper.jpg') center/cover;
         }
 
         .hero-content {
             color: white;
             max-width: 650px;
+            width: 100%;
         }
 
         .hero-content .small-title {
@@ -252,13 +286,26 @@
             text-decoration: none;
         }
 
+
         footer a:hover {
             color: white;
         }
 
+        /* ===== RESPONSIVE HERO ===== */
         @media (max-width: 768px) {
-            .hero {
-                min-height: 580px;
+
+            .hero,
+            #giftoraHero .carousel-inner,
+            #giftoraHero .carousel-item {
+                height: 580px;
+            }
+
+            .hero-content {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
             }
 
             .about-box {
@@ -266,9 +313,9 @@
             }
         }
 
-        /* ===== Home Page Navbar Search ===== */
+        /* ===== GIFTORA ROUNDED SEARCH BAR ===== */
         .giftora-search {
-            position: relative;
+          position: relative;
             width: 165px;
             height: 34px;
             display: flex;
@@ -291,8 +338,14 @@
             font-size: 11px;
         }
 
+        .giftora-search input:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
         .giftora-search button {
-            position: absolute;
+             position: absolute;
             right: 7px;
             top: 50%;
             transform: translateY(-50%);
@@ -304,13 +357,16 @@
             cursor: pointer;
         }
 
+
+        /* ===== TABLET RESPONSIVE ===== */
         @media (max-width: 991px) {
             .giftora-search {
                 width: 165px;
+                max-width: 100%;
             }
         }
 
-        /* Floating Social Media Buttons */
+        /* ===== FLOATING SOCIAL BUTTONS ===== */
         .floating-social {
             position: fixed;
             right: 22px;
@@ -420,23 +476,131 @@
     </nav>
 
 
-    <!-- HERO -->
+    <!-- HERO SLIDER -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="small-title">Thoughtfully crafted • Beautifully gifted</div>
-                <h1>Make Every Gift Feel Extraordinary.</h1>
-                <p>
-                    Premium gift boxes, hampers and customized packaging
-                    crafted to make birthdays, weddings, festivals and
-                    corporate moments truly memorable.
-                </p>
 
-                <div class="hero-buttons">
-                    <a href="#products" class="btn-main">Explore Collection</a>
-                    <a href="#contact" class="btn-outline">Customize Your Gift</a>
+        <div id="giftoraHero" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+
+            <div class="carousel-inner">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active"
+                    style="background-image: url('../Image/Home/01-corporate-gift-hamper.jpg');">
+
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="hero-content">
+
+                            <div class="small-title">
+                                Thoughtfully crafted • Beautifully gifted
+                            </div>
+
+                            <h1>Make Every Gift Feel Extraordinary.</h1>
+
+                            <p>
+                                Premium gift boxes, hampers and customized packaging
+                                crafted to make birthdays, weddings, festivals and
+                                corporate moments truly memorable.
+                            </p>
+
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn-main">Explore Collection</a>
+                                <a href="#contact" class="btn-outline">Customize Your Gift</a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+
+                <!-- SLIDE 2 -->
+                <div class="carousel-item" style="background-image: url('../Image/Home/giftora-Slider1.jpg');">
+
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="hero-content">
+
+                            <div class="small-title">
+                                Elegance in every detail
+                            </div>
+
+                            <h1>Gifts That Speak Without Words.</h1>
+
+                            <p>
+                                Discover beautifully designed gift boxes that turn
+                                thoughtful gestures into unforgettable memories.
+                            </p>
+
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn-main">Explore Collection</a>
+                                <a href="#contact" class="btn-outline">Customize Your Gift</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="carousel-item" style="background-image: url('../Image/Home/giftora-Slider2.jpg');">
+
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="hero-content">
+
+                            <div class="small-title">
+                                Thoughtful gifting • Lasting impressions
+                            </div>
+
+                            <h1>Make Every Celebration Special.</h1>
+
+                            <p>
+                                Beautifully curated hampers designed to bring joy
+                                to festivals, celebrations and special occasions.
+                            </p>
+
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn-main">Explore Collection</a>
+                                <a href="#contact" class="btn-outline">Customize Your Gift</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="carousel-item" style="background-image: url('../Image/Home/giftora-Slider3.jpg');">
+
+                    <div class="container h-100 d-flex align-items-center">
+                        <div class="hero-content">
+
+                            <div class="small-title">
+                                Made for moments that matter
+                            </div>
+
+                            <h1>Celebrate More With Thoughtful Gifts.</h1>
+
+                            <p>
+                                Explore unique gifting ideas and customized hampers
+                                crafted to make every occasion more meaningful.
+                            </p>
+
+                            <div class="hero-buttons">
+                                <a href="#products" class="btn-main">Explore Collection</a>
+                                <a href="#contact" class="btn-outline">Customize Your Gift</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Previous Button -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#giftoraHero" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <!-- Next Button -->
+            <button class="carousel-control-next" type="button" data-bs-target="#giftoraHero" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
         </div>
     </section>
 
@@ -516,7 +680,7 @@
                             <h5>Signature Gift Box</h5>
                             <p class="text-muted">Premium handcrafted box.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="price">₹899</span>
+                                <span class="price">₹310</span>
                                 <a class="product-btn" href="#contact">Enquire</a>
                             </div>
                         </div>
@@ -530,7 +694,7 @@
                             <h5>Luxury Hamper</h5>
                             <p class="text-muted">A curated premium collection.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="price">₹1,499</span>
+                                <span class="price">₹750</span>
                                 <a class="product-btn" href="#contact">Enquire</a>
                             </div>
                         </div>
@@ -544,7 +708,7 @@
                             <h5>Corporate Gift Set</h5>
                             <p class="text-muted">Professional branded gifting.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="price">₹1,999</span>
+                                <span class="price">₹480</span>
                                 <a class="product-btn" href="#contact">Enquire</a>
                             </div>
                         </div>
@@ -558,7 +722,7 @@
                             <h5>Wedding Hamper</h5>
                             <p class="text-muted">Elegant gifting for celebrations.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="price">₹1,299</span>
+                                <span class="price">₹1,099</span>
                                 <a class="product-btn" href="#contact">Enquire</a>
                             </div>
                         </div>
@@ -772,7 +936,7 @@
     <div class="floating-social">
 
         <!-- WhatsApp -->
-        <a href="https://wa.me/917350992405" class="social-btn whatsapp-btn" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/919970562198" class="social-btn whatsapp-btn" target="_blank" rel="noopener noreferrer"
             aria-label="Chat on WhatsApp">
             <i class="bi bi-whatsapp"></i>
         </a>

@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
     <url>
         <loc>https://sami05-tech.github.io/Giftora/</loc>
     </url>
-
-    <url>
-        <loc>https://sami05-tech.github.io/Giftora/HTML/index.html</loc>
-    </url>
-
     <url>
         <loc>https://sami05-tech.github.io/Giftora/HTML/products.html</loc>
     </url>
-
     <url>
         <loc>https://sami05-tech.github.io/Giftora/HTML/categories.html</loc>
     </url>
-
     <url>
         <loc>https://sami05-tech.github.io/Giftora/HTML/about.html</loc>
     </url>
-
     <url>
         <loc>https://sami05-tech.github.io/Giftora/HTML/bulk-gifting.html</loc>
     </url>
-
     <url>
         <loc>https://sami05-tech.github.io/Giftora/HTML/contact.html</loc>
     </url>
-
 </urlset>
